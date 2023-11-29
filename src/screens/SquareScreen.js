@@ -21,7 +21,7 @@ const reducer = (state, action) => {
             ? state 
             : {...state, blue: state.blue+action.payload}; 
         default:
-            return;
+            return state;
     }
 };
 
