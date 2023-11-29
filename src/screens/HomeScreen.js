@@ -32,6 +32,18 @@ const HomeScreen = ( {navigation} ) => {  //navigation is a destructured prop
         <Text style={styles.text}>Go to Counter Screen</Text>
       </TouchableOpacity>
 
+      <TouchableOpacity
+        onPress={() => navigation.navigate('Color')}
+        style={styles.button}>
+        <Text style={styles.text}>Go to Color Screen</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        onPress={() => navigation.navigate('Square')}
+        style={styles.button}>
+        <Text style={styles.text}>Go to Square Screen</Text>
+      </TouchableOpacity>
+
     </View>
   );
 };
