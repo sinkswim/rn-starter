@@ -9,11 +9,17 @@ const reducer = (state, action) => {
     // action === {colorToChange: 'red' || 'green' || 'blue', amount: COLOR_INCREMENT || -COLOR_INCREMENT}
     switch(action.colorToChange){
         case 'red':
-            return {...state, red: state.red+action.amount};    // not changing the state object directly, rather creating a new object
+            return state.red + action.amount > 255 ||state.red + action.amount < 0
+                ? state // always return something from the reducer or the state will be undefined on next page render
+                : {...state, red: state.red+action.amount};    // not changing the state object directly, rather creating a new object
         case 'green':
-            return {...state, green: state.green+action.amount};
+            return state.green + action.amount > 255 ||state.green + action.amount < 0
+            ? state 
+            : {...state, green: state.green+action.amount}; 
         case 'blue':
-            return {...state, blue: state.blue+action.amount};
+            return state.blue + action.amount > 255 ||state.blue + action.amount < 0
+            ? state 
+            : {...state, blue: state.blue+action.amount}; 
         default:
             return;
     }
