@@ -44,6 +44,12 @@ const HomeScreen = ( {navigation} ) => {  //navigation is a destructured prop
         <Text style={styles.text}>Go to Square Screen</Text>
       </TouchableOpacity>
 
+      <TouchableOpacity
+        onPress={() => navigation.navigate('Text')}
+        style={styles.button}>
+        <Text style={styles.text}>Go to Text Screen</Text>
+      </TouchableOpacity>
+
     </View>
   );
 };
@@ -55,7 +61,7 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: "yellow",
-    marginVertical: 10
+    marginVertical: 5
   }
 });
 
